@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-let uuid = crypto.randomUUID();
+//let uuid = crypto.randomUUID();
 
 //common return statements
 const notHaveAnyData = {
@@ -65,6 +65,7 @@ async function logData(data) {
 
 app.post('/process-create', async function (req, res) {
   try {
+     let uuid = crypto.randomUUID();
     let data = {
       pId: uuid,
       creationTime: new Date(),
